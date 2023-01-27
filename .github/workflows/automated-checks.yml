@@ -33,7 +33,7 @@ jobs:
 
   # Pypi Build Test
   pypi-build-test:
-    needs: [   pre-commit ]
+    needs: [ pre-commit ]
     name: PyPi Build Test
     runs-on: ubuntu-latest
 
