@@ -1,6 +1,48 @@
 [build-system]
+build-backend = "hatchling.build"
 requires = [
-    "setuptools>=42",
-    "wheel"
+    "hatchling",
 ]
-build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-ckeditor-youtube-plugin"
+version = "0.0.1"
+description = "YouTube Plugin for django-ckeditor"
+readme = "README.md"
+keywords = [
+    "ckeditor",
+    "plugin",
+    "youtube",
+]
+license = {file = "LICENSE"}
+authors = [
+    { name = "Peter Pfeufer", email = "develop@ppfeufer.de" },
+]
+requires-python = ">=3.8"
+classifiers = [
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 4.0",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: GNU General Public License v3 (GPLv3)",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3 :: Only",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Internet :: WWW/HTTP :: Dynamic Content",
+]
+dependencies = [
+    "django-ckeditor",
+]
+[project.urls]
+Changelog = "https://github.com/ppfeufer/django-ckeditor-youtube-plugin/blob/master/CHANGELOG.md"
+"Issue / Bug Reports" = "https://github.com/ppfeufer/django-ckeditor-youtube-plugin/issues"
+
+[tool.hatch.build]
+include = [
+    "/django_ckeditor_youtube_plugin",
+]

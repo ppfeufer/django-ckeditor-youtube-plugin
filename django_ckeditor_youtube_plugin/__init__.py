@@ -2,9 +2,10 @@
 Initialise the app
 """
 
-default_app_config: str = (
-    "django_ckeditor_youtube_plugin.apps.CkeditorYouTubePluginConfig"
-)
+# Standard Library
+from importlib import metadata
 
-__version__ = "0.0.1"
+__version__ = metadata.version("django-ckeditor-youtube-plugin")
 __title__ = "Django CKEditor YouTube Plugin"
+
+del metadata
