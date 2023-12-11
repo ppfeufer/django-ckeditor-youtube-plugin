@@ -16,7 +16,7 @@ ci:
   autofix_prs: false
   autoupdate_branch: 'master'
   autoupdate_commit_msg: '[pre-commit.ci] pre-commit autoupdate'
-  autoupdate_schedule: weekly
+  autoupdate_schedule: monthly
   skip: []
   submodules: false
 
@@ -35,7 +35,8 @@ repos:
       # git checks
       - id: check-merge-conflict
       - id: check-added-large-files
-        args: [ --maxkb=1000 ]
+        args:
+          - --maxkb=1000
       - id: detect-private-key
       - id: check-case-conflict
 
@@ -44,14 +45,18 @@ repos:
       - id: debug-statements
       - id: requirements-txt-fixer
       - id: fix-encoding-pragma
-        args: [ --remove ]
+        args:
+          - --remove
       - id: fix-byte-order-marker
+      - id: check-builtin-literals
 
       # General quality checks
       - id: mixed-line-ending
-        args: [ --fix=lf ]
+        args:
+          - --fix=lf
       - id: trailing-whitespace
-        args: [ --markdown-linebreak-ext=md ]
+        args:
+          - --markdown-linebreak-ext=md
         exclude: |
           (?x)(
             .min\.css|
